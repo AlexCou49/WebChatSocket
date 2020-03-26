@@ -47,6 +47,8 @@ function checkLinkUsersModal() {
 /* Modal */
 
 var modalContainer = document.body.querySelector('#modal-container')
+    listUsers = modalContainer.querySelector('#contentUsers ul')
+
 
 // Ouverture du modal sur la demande de l'username
 function openUsernameModal() {
@@ -68,4 +70,19 @@ function openUsersModal() {
 function closeModal() {
   modalContainer.classList.add('out')
   document.body.classList.remove('modal-active')
+}
+
+function updateUsers(users) {
+console.log(listUsers)
+listUsers.innerHTML = ''
+  for (let i in users) {
+    listUsers.innerHTML += '<li>'+users[i]+'</li>'
+  }
+
+  let text = 'Discussion générale ('+users.length+')'
+
+  friends.all[0].querySelector('.name').innerHTML = text
+
+  if (chat.person == 'person0' || chat.person == null)
+    document.body.querySelector('#infoPersonTop').innerHTML = text
 }

@@ -245,7 +245,8 @@ const socket = io();
 let formUsername = document.body.querySelector('#formUsername'),
     inputUsername = formUsername.querySelector('#inputUsername'),
     loaderUsername = formUsername.querySelector('#loaderUsername'),
-    username
+    username,
+    allUsers
 
 // Envoie de l'username souhaité
 formUsername.addEventListener('submit', (event) => {
@@ -257,15 +258,28 @@ formUsername.addEventListener('submit', (event) => {
 })
 
 // Réponses concernant l'assignation de l'username
-socket.on('acceptUsername', (_username) => {
+socket.on('acceptUsername', (_username, _allUsers) => {
     username = _username
+    allUsers = _allUsers
+    console.log(allUsers)
     closeModal()
+    updateUsers(allUsers)
 })
 socket.on('rejectUsername', (_username) => {
     inputUsername.value = ''
     inputUsername.setAttribute('placeholder', "L'username "+_username+" est déjà pris !")
     inputUsername.classList.remove('hidden')
     loaderUsername.classList.add('hidden')
+})
+
+//MAJ des utilisateurs
+socket.on('newUser', (newUsername, _allUsers) => {
+    allUsers = _allUsers
+    updateUsers(allUsers)
+})
+socket.on('leftUser', (_allUsers) => {
+    allUsers = _allUsers
+    updateUsers(allUsers)
 })
   
 </script>

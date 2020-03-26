@@ -61,9 +61,10 @@ io.on('connection', function (socket) {
             } else {
                 socket.join('users', () => {
                     usernames[socket.id] = usernameWanted
-                    socket.emit('acceptUsername', usernameWanted, getUsernames())
+                    let justUsernames = getUsernames()
+                    socket.emit('acceptUsername', usernameWanted, justUsernames)
+                    socket.to('users').emit('newUser', usernameWanted, justUsernames)
                 })
-                
             }
         }, timeFakeLoading)
 
@@ -71,10 +72,9 @@ io.on('connection', function (socket) {
 
     //Deconnexion de l'utilisateur
     socket.on('disconnect', () => {
-        console.log('disconnect : ' + socket.id)
         if(usernames[socket.id]){
             delete usernames[socket.id]
-            console.log('username deleted')
+            socket.to('users').emit('leftUser', getUsernames())
         }
     })
 });
