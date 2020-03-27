@@ -3,6 +3,7 @@ let express = require('express')
 let http = require('http')
 let socketio = require('socket.io')
 let morgan = require('morgan')
+let striptags = require('striptags')
 let config = require('./config')
 
 //Constantes
@@ -43,7 +44,7 @@ io.on('connection', function (socket) {
     socket.on('setUsername', (usernameWanted) => {
 
         //traitement pour l'assignation d'un username
-        usernameWanted = usernameWanted.trim()
+        usernameWanted = striptags(usernameWanted.trim())
 
         //verification de l'unicité de l'user
         let usernameTaken = false
@@ -52,7 +53,7 @@ io.on('connection', function (socket) {
             usernameTaken = true
         }
 
-        let timeFakeLoading = 1000
+        let timeFakeLoading = 0
         setTimeout(() => {
 
             //traitement final
@@ -68,6 +69,26 @@ io.on('connection', function (socket) {
             }
         }, timeFakeLoading)
 
+    })
+
+    //Reception d'un message
+
+    socket.on('sendMessage', (text) => {
+        text = striptags(text.trim())
+        if (text != '') {
+            socket.to('users').emit('newMessage', text, usernames[socket.id])
+            socket.emit('confirmMessage', text)
+        }
+    })
+
+    //Information sur l'écriture d'un user
+
+    socket.on('startWriting', () => { 
+        socket.to('users').emit('userStartWriting', usernames[socket.id])
+    })
+
+    socket.on('stopWriting', () => {
+        socket.to('users').emit('userStopWriting')
     })
 
     //Deconnexion de l'utilisateur

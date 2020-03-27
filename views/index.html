@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" >
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -13,276 +13,325 @@
 
 <body class="modal-active">
 
-<div id="modal-container" class="modal-container">
-    <div id="contentUsername" class="modal-background">
-        <form class="modal" id="formUsername" method="post">
-            <h2>Choisis un username</h2>
-            <input autocomplete="off" id="inputUsername" name="username"  type="text">
-            <div class="loader hidden" id="loaderUsername"></div>
-        </form>
-    </div>
-    <div id="contentUsers" class="modal-background none">
-        <span class="closeIcon" onclick="closeModal()"></span>
-        <ul class="listModal">
-            <li>Joris</li>
-            <li>Alexis974</li>
-            <li>ManiMano</li>
-            <li>GoogleHome</li>
-            <li>Huge Man</li>
-            <li>Ricky Dicks</li>
-            <li>Martin McCain</li>
-            <li>Mister T</li>
-            <li>MozorStudio</li>
-            <li>GutterBalls</li>
-            <li>HessMan</li>
-        </ul>
-    </div>
-</div>
-
-<div class="wrapper">
-    <div class="container">
-        <div class="left">
-            <div class="top">
-                <input type="text" placeholder="Rechercher" />
-                <a href="javascript:;" class="search"></a>
-            </div>
-            <ul class="people">
-                <li class="person" data-chat="person0">
-                    <span class="name">Discussion générale</span>
-                    <span class="preview">Bienvenue !</span>
-                </li>
-                <li class="person" data-chat="person1">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/thomas.jpg" alt=""/>
-                    <span class="name">Thomas Bangalter</span>
-                    <span class="time">2:09
-                    </span>
-                    <span class="preview">I was wondering...</span>
-                </li>
-                <li class="person" data-chat="person2">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/dog.png" alt=""/>
-                    <span class="name">Dog Woofson</span>
-                    <span class="time">1:44
-                    </span>
-                    <span class="preview">I've forgotten how it felt before</span>
-                </li>
-                <li class="person" data-chat="person3">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/louis-ck.jpeg" alt=""/>
-                    <span class="name">Louis CK</span>
-                    <span class="time">2:09
-                    </span>
-                    <span class="preview">But we’re probably gonna need a new carpet.</span>
-                </li>
-                <li class="person" data-chat="person4">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/bo-jackson.jpg" alt=""/>
-                    <span class="name">Bo Jackson</span>
-                    <span class="time">2:09
-                    </span>
-                    <span class="preview">It’s not that bad...</span>
-                </li>
-                <li class="person" data-chat="person5">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/michael-jordan.jpg" alt=""/>
-                    <span class="name">Michael Jordan</span>
-                    <span class="time">2:09
-                    </span>
-                    <span class="preview">Wasup for the third time like is you blind bitch</span>
-                </li>
-                <li class="person" data-chat="person6">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/drake.jpg" alt=""/>
-                    <span class="name">Drake</span>
-                    <span class="time">2:09
-                    </span>
-                    <span class="preview">howdoyoudoaspace</span>
-                </li>
+    <div id="modal-container" class="modal-container">
+        <div id="contentUsername" class="modal-background">
+            <form class="modal" id="formUsername" method="post">
+                <h2>Choisis un username</h2>
+                <input autofocus autocomplete="off" id="inputUsername" name="username" type="text">
+                <div class="loader hidden" id="loaderUsername"></div>
+            </form>
+        </div>
+        <div id="contentUsers" class="modal-background none">
+            <span class="closeIcon" onclick="closeModal()"></span>
+            <ul class="listModal">
+                <li>Joris</li>
+                <li>Alexis974</li>
+                <li>ManiMano</li>
+                <li>GoogleHome</li>
+                <li>Huge Man</li>
+                <li>Ricky Dicks</li>
+                <li>Martin McCain</li>
+                <li>Mister T</li>
+                <li>MozorStudio</li>
+                <li>GutterBalls</li>
+                <li>HessMan</li>
             </ul>
         </div>
-        <div class="right">
-            <div class="top">
-                <span>Vers:
-                    <span class="name" id="infoPersonTop">Discussion générale</span>
-                </span>
-            </div>
-            <div class="chat" data-chat="person0">
-                <div class="conversation-start">
-                    <span>Bienvenue !</span>
-                </div>
-            </div>
-            <div class="chat" data-chat="person1">
-                <div class="conversation-start">
-                    <span>Aujourd'hui, 6:48</span>
-                </div>
-                <div class="bubble you">
-                    Hello,
-                </div>
-                <div class="bubble you">
-                    it's me.
-                </div>
-                <div class="bubble you">
-                    I was wondering...
-                </div>
-            </div>
-            <div class="chat" data-chat="person2">
-                <div class="conversation-start">
-                    <span>Aujourd'hui, 5:38    </span>
-                </div>
-                <div class="bubble you">
-                    Hello, can you hear me?
-                </div>
-                <div class="bubble you">
-                    I'm in California dreaming
-                </div>
-                <div class="bubble me">
-                    ... about who we used to be.
-                </div>
-                <div class="bubble me">
-                    Are you serious?
-                </div>
-                <div class="bubble you">
-                    When we were younger and free...
-                </div>
-                <div class="bubble you">
-                    I've forgotten how it felt before
-                </div>
-            </div>
-            <div class="chat" data-chat="person3">
-                <div class="conversation-start">
-                    <span>Aujourd'hui, 3:38</span>
-                </div>
-                <div class="bubble you">
-                    Hey human!
-                </div>
-                <div class="bubble you">
-                    Umm... Someone took a shit in the hallway.
-                </div>
-                <div class="bubble me">
-                    ... what.
-                </div>
-                <div class="bubble me">
-                    Are you serious?
-                </div>
-                <div class="bubble you">
-                    I mean...
-                </div>
-                <div class="bubble you">
-                    It’s not that bad...
-                </div>
-                <div class="bubble you">
-                    But we’re probably gonna need a new carpet.
-                </div>
-            </div>
-            <div class="chat" data-chat="person4">
-                <div class="conversation-start">
-                    <span>Yesterday, 4:20  </span>
-                </div>
-                <div class="bubble me">
-                    Hey human!
-                </div>
-                <div class="bubble me">
-                    Umm... Someone took a shit in the hallway.
-                </div>
-                <div class="bubble you">
-                    ... what.
-                </div>
-                <div class="bubble you">
-                    Are you serious?
-                </div>
-                <div class="bubble me">
-                    I mean...
-                </div>
-                <div class="bubble me">
-                    It’s not that bad...
-                </div>
-            </div>
-            <div class="chat" data-chat="person5">
-                <div class="conversation-start">
-                    <span>Aujourd'hui, 6:28</span>
-                </div>
-                <div class="bubble you">
-                    Wasup
-                </div>
-                <div class="bubble you">
-                    Wasup
-                </div>
-                <div class="bubble you">
-                    Wasup for the third time like is <br />you blind bitch
-                </div>
+    </div>
 
+    <div class="wrapper">
+        <div class="container">
+            <div class="left">
+                <div class="top">
+                    <input type="text" placeholder="Rechercher" />
+                    <a href="javascript:;" class="search"></a>
+                </div>
+                <ul class="people">
+                    <li class="person" data-chat="person0">
+                        <span class="name">Discussion générale</span>
+                        <span class="preview">Bienvenue !</span>
+                    </li>
+                    <li class="person" data-chat="person1">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/thomas.jpg" alt="" />
+                        <span class="name">Thomas Bangalter</span>
+                        <span class="time">2:09
+                        </span>
+                        <span class="preview">I was wondering...</span>
+                    </li>
+                    <li class="person" data-chat="person2">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/dog.png" alt="" />
+                        <span class="name">Dog Woofson</span>
+                        <span class="time">1:44
+                        </span>
+                        <span class="preview">I've forgotten how it felt before</span>
+                    </li>
+                    <li class="person" data-chat="person3">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/louis-ck.jpeg" alt="" />
+                        <span class="name">Louis CK</span>
+                        <span class="time">2:09
+                        </span>
+                        <span class="preview">But we’re probably gonna need a new carpet.</span>
+                    </li>
+                    <li class="person" data-chat="person4">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/bo-jackson.jpg" alt="" />
+                        <span class="name">Bo Jackson</span>
+                        <span class="time">2:09
+                        </span>
+                        <span class="preview">It’s not that bad...</span>
+                    </li>
+                    <li class="person" data-chat="person5">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/michael-jordan.jpg" alt="" />
+                        <span class="name">Michael Jordan</span>
+                        <span class="time">2:09
+                        </span>
+                        <span class="preview">Wasup for the third time like is you blind bitch</span>
+                    </li>
+                    <li class="person" data-chat="person6">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/drake.jpg" alt="" />
+                        <span class="name">Drake</span>
+                        <span class="time">2:09
+                        </span>
+                        <span class="preview">howdoyoudoaspace</span>
+                    </li>
+                </ul>
             </div>
-            <div class="chat" data-chat="person6">
-                <div class="conversation-start">
-                    <span>Monday, 1:27 </span>
+            <div class="right">
+                <div class="top">
+                    <span>Vers:
+                        <span class="name" id="infoPersonTop">Discussion générale</span>
+                    </span>
                 </div>
-                <div class="bubble you">
-                    So, how's your new phone?
+                <div class="chat" data-chat="person0">
+                    <div class="conversation-start">
+                        <span>Bienvenue !</span>
+                    </div>
                 </div>
-                <div class="bubble you">
-                    You finally have a smartphone :D
+                <div class="chat" data-chat="person1">
+                    <div class="conversation-start">
+                        <span>Aujourd'hui, 6:48</span>
+                    </div>
+                    <div class="bubble you">
+                        Hello,
+                    </div>
+                    <div class="bubble you">
+                        it's me.
+                    </div>
+                    <div class="bubble you">
+                        I was wondering...
+                    </div>
                 </div>
-                <div class="bubble me">
-                    Drake?
+                <div class="chat" data-chat="person2">
+                    <div class="conversation-start">
+                        <span>Aujourd'hui, 5:38 </span>
+                    </div>
+                    <div class="bubble you">
+                        Hello, can you hear me?
+                    </div>
+                    <div class="bubble you">
+                        I'm in California dreaming
+                    </div>
+                    <div class="bubble me">
+                        ... about who we used to be.
+                    </div>
+                    <div class="bubble me">
+                        Are you serious?
+                    </div>
+                    <div class="bubble you">
+                        When we were younger and free...
+                    </div>
+                    <div class="bubble you">
+                        I've forgotten how it felt before
+                    </div>
                 </div>
-                <div class="bubble me">
-                    Why aren't you answering?
+                <div class="chat" data-chat="person3">
+                    <div class="conversation-start">
+                        <span>Aujourd'hui, 3:38</span>
+                    </div>
+                    <div class="bubble you">
+                        Hey human!
+                    </div>
+                    <div class="bubble you">
+                        Umm... Someone took a shit in the hallway.
+                    </div>
+                    <div class="bubble me">
+                        ... what.
+                    </div>
+                    <div class="bubble me">
+                        Are you serious?
+                    </div>
+                    <div class="bubble you">
+                        I mean...
+                    </div>
+                    <div class="bubble you">
+                        It’s not that bad...
+                    </div>
+                    <div class="bubble you">
+                        But we’re probably gonna need a new carpet.
+                    </div>
                 </div>
-                <div class="bubble you">
-                    howdoyoudoaspace
+                <div class="chat" data-chat="person4">
+                    <div class="conversation-start">
+                        <span>Yesterday, 4:20 </span>
+                    </div>
+                    <div class="bubble me">
+                        Hey human!
+                    </div>
+                    <div class="bubble me">
+                        Umm... Someone took a shit in the hallway.
+                    </div>
+                    <div class="bubble you">
+                        ... what.
+                    </div>
+                    <div class="bubble you">
+                        Are you serious?
+                    </div>
+                    <div class="bubble me">
+                        I mean...
+                    </div>
+                    <div class="bubble me">
+                        It’s not that bad...
+                    </div>
                 </div>
-            </div>
-            <div class="write">
-                <input type="text" />
-                <a href="javascript:;" class="write-link send"></a>
+                <div class="chat" data-chat="person5">
+                    <div class="conversation-start">
+                        <span>Aujourd'hui, 6:28</span>
+                    </div>
+                    <div class="bubble you">
+                        Wasup
+                    </div>
+                    <div class="bubble you">
+                        Wasup
+                    </div>
+                    <div class="bubble you">
+                        Wasup for the third time like is <br />you blind bitch
+                    </div>
+
+                </div>
+                <div class="chat" data-chat="person6">
+                    <div class="conversation-start">
+                        <span>Monday, 1:27 </span>
+                    </div>
+                    <div class="bubble you">
+                        So, how's your new phone?
+                    </div>
+                    <div class="bubble you">
+                        You finally have a smartphone :D
+                    </div>
+                    <div class="bubble me">
+                        Drake?
+                    </div>
+                    <div class="bubble me">
+                        Why aren't you answering?
+                    </div>
+                    <div class="bubble you">
+                        howdoyoudoaspace
+                    </div>
+                </div>
+                <div class="write">
+                    <span class="someoneWriting">Joris est en train d'écrire</span>
+                    <input id="inputMessage" type="text" />
+                    <a href="javascript:;" class="write-link send" onclick="sendMessage()"></a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script src="assets/js/index.js"></script>
-<script src="/socket.io/socket.io.js"></script>
-<script>
+    <script src="assets/js/index.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
 
-const socket = io();
+        const socket = io();
 
-// Variables globales
-let formUsername = document.body.querySelector('#formUsername'),
-    inputUsername = formUsername.querySelector('#inputUsername'),
-    loaderUsername = formUsername.querySelector('#loaderUsername'),
-    username,
-    allUsers
+        // Variables globales
+        let formUsername = document.body.querySelector('#formUsername'),
+            inputUsername = formUsername.querySelector('#inputUsername'),
+            loaderUsername = formUsername.querySelector('#loaderUsername'),
+            inputMessage = document.body.querySelector('#inputMessage'),
+            username,
+            allUsers
 
-// Envoie de l'username souhaité
-formUsername.addEventListener('submit', (event) => {
-    event.preventDefault()
-    let usernameWanted = inputUsername.value
-    socket.emit('setUsername', usernameWanted)
-    inputUsername.classList.add('hidden')
-    loaderUsername.classList.remove('hidden')
-})
+        // Envoie de l'username souhaité
+        formUsername.addEventListener('submit', (event) => {
+            event.preventDefault()
+            let usernameWanted = inputUsername.value
+            socket.emit('setUsername', usernameWanted)
+            inputUsername.classList.add('hidden')
+            loaderUsername.classList.remove('hidden')
+        })
 
-// Réponses concernant l'assignation de l'username
-socket.on('acceptUsername', (_username, _allUsers) => {
-    username = _username
-    allUsers = _allUsers
-    console.log(allUsers)
-    closeModal()
-    updateUsers(allUsers)
-})
-socket.on('rejectUsername', (_username) => {
-    inputUsername.value = ''
-    inputUsername.setAttribute('placeholder', "L'username "+_username+" est déjà pris !")
-    inputUsername.classList.remove('hidden')
-    loaderUsername.classList.add('hidden')
-})
+        //envoie d'un msg & traitement écriture
+        let isWriting = false
+        let stopWriting = ''
 
-//MAJ des utilisateurs
-socket.on('newUser', (newUsername, _allUsers) => {
-    allUsers = _allUsers
-    updateUsers(allUsers)
-})
-socket.on('leftUser', (_allUsers) => {
-    allUsers = _allUsers
-    updateUsers(allUsers)
-})
-  
-</script>
+        inputMessage.addEventListener('keydown', (event) => {
+            if (event.keyCode === 13) {
+                //envoie du message
+                sendMessage()
+            } else {
+                //traitement concernant l'écriture
+                clearTimeout(stopWriting)
+                if (!isWriting) {
+                    isWriting = true;
+                    console.log('start')
+                    socket.emit('startWriting')
+                }
+                stopWriting = setTimeout(() => {
+                    console.log('stop')
+                    socket.emit('stopWriting')
+                    isWriting = false
+                }, 3000)
+            }
+        })
+
+        function sendMessage() {
+            let text = inputMessage.value.trim()
+            if(text != '') {
+                //envoie du message
+                socket.emit('sendMessage', text)
+                inputMessage.value = ''
+                //traitement pour l'écriture
+                clearTimeout(stopWriting)
+                isWriting = false
+                console.log('stop')
+                socket.emit('stopWriting')
+            }
+        }
+
+        // Réponses concernant l'assignation de l'username
+        socket.on('acceptUsername', (_username, _allUsers) => {
+            username = _username
+            allUsers = _allUsers
+            closeModal()
+            updateUsers(allUsers)
+
+        })
+        socket.on('rejectUsername', (_username) => {
+            inputUsername.value = ''
+            inputUsername.setAttribute('placeholder', "L'username " + _username + " est déjà pris !")
+            inputUsername.classList.remove('hidden')
+            loaderUsername.classList.add('hidden')
+        })
+
+        // Mise à jour des utilisateurs 
+        socket.on('newUser', (newUsername, _allUsers) => {
+            allUsers = _allUsers
+            updateUsers(allUsers)
+            messageNewUser(newUsername)
+        })
+        socket.on('leftUser', (_allUsers) => {
+            allUsers = _allUsers
+            updateUsers(allUsers)
+        })
+
+        //Affichage d'un message
+
+        socket.on('confirmMessage', (text) => showMyMessage(text))
+        socket.on('newMessage', (text, usernamesSender) => showNewMessage(text, usernamesSender))
+
+        //Affichage d ela détection de l'écriture
+
+        
+    </script>
 
 </body>
 

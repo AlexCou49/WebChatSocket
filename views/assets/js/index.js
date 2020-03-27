@@ -33,7 +33,7 @@ function setAciveChat(f) {
   checkLinkUsersModal()
 }
 
-// Vérification de l'usabilité du lien ver le modal users
+// Vérification de l'usabilité du lien vers le modal users
 function checkLinkUsersModal() {
   if (chat.person == 'person0' || chat.person == null) {
     chat.name.addEventListener('click', openUsersModal, false)
@@ -46,9 +46,8 @@ function checkLinkUsersModal() {
 
 /* Modal */
 
-var modalContainer = document.body.querySelector('#modal-container')
+var modalContainer = document.body.querySelector('#modal-container'),
     listUsers = modalContainer.querySelector('#contentUsers ul')
-
 
 // Ouverture du modal sur la demande de l'username
 function openUsernameModal() {
@@ -72,17 +71,42 @@ function closeModal() {
   document.body.classList.remove('modal-active')
 }
 
+// Mise à jour des utilisateurs présents
 function updateUsers(users) {
-console.log(listUsers)
-listUsers.innerHTML = ''
+
+  // Mise à jour du modal listant les users
+  listUsers.innerHTML = ''
   for (let i in users) {
     listUsers.innerHTML += '<li>'+users[i]+'</li>'
   }
 
-  let text = 'Discussion générale ('+users.length+')'
-
+  // Mise à jour du texte à gauche
+  let text = 'Discussion générale (' + users.length + ')'
   friends.all[0].querySelector('.name').innerHTML = text
 
+  // Mise à jour du texte en haut (si c'est le chat actif)
   if (chat.person == 'person0' || chat.person == null)
     document.body.querySelector('#infoPersonTop').innerHTML = text
+
+}
+
+//Messages
+
+var globalChat = chat.container.querySelector('.chat[data-chat=person0]')
+
+// Message d'un nouvel utilisateur
+function messageNewUser(newUsername) {
+  let message = '<div class="conversation-start"><span>'+newUsername+' est là !</span></div>'
+  globalChat.insertAdjacentHTML('beforeend', message)
+}
+
+//Affichage du message du user courant
+function showMyMessage(text) {
+  let message = '<div class="bubble me">' + text + '</div>'
+  globalChat.insertAdjacentHTML('beforeend', message)
+}
+//Affichage d'un msg exterieur'
+function showNewMessage(text, usernamesSender) {
+  let message = '<div class="bubble name you"><span class="username"></span>' + usernamesSender + '</div>'
+  globalChat.insertAdjacentHTML('beforeend', message)
 }
